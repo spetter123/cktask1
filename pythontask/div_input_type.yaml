@@ -1,0 +1,24 @@
+-
+  - ss
+  - 20
+  - "TypeError"
+-
+  - 01
+  - aa
+  - "TypeError"
+-
+  - (1, 2)
+  - 200
+  - "TypeError"
+-
+  - [True, 58]
+  - 200
+  - "TypeError"
+-
+  - {a: 1, b: 2}
+  - 200
+  - "TypeError"
+-
+  - {a, b}
+  - 200
+  - "TypeError"

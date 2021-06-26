@@ -78,35 +78,9 @@ class Calculator:
         elif tag_type is None:
             return "input None error"
 
-# class Div:
-#     def div(self, a, b):
-#         return a/b
 
 class Div:
     def div(self, a, b):
         return a/b
 
-div = Div()
-print(div.div(-32.54e100, 7.02e-11))
-print(div.div(9.322e-36j, .876j))
-print(div.div(-.6545+0J, 3e+26J))
-print(div.div(4.53e-7j, 32.3e100))
-
-print(div.div(-786, .876j))
-
-"""
-- 0.0
-- "type error"
-- "type error"
-- -5.79047619047619
-- 0.0
-- -3.588888888888889e+17
-- -4.6353276353276356e+111
-- 0.0
-- 1.0641552511415525e-35+0j
-- 2.1816666666666667e-27j
-- 1.4024767801857583e-108j
-- "type error"
-- 897.2602739726027j
-"""
-
+print(type(1+5j))

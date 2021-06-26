@@ -1,0 +1,136 @@
+add:
+  int:
+    argsname: [a,b,expect]
+    datas:
+      - [0, 0, 0]
+      - [1, 2, 3]
+      - [100, 100, 200]
+      - [-100, 100, 0]
+      - [-789, 080, -709]
+      - [-0x260, 0x69, -503]
+    ids:
+      - allzero
+      - smartint
+      - bigint
+      - negative
+      - frontzero
+      - base16 to base10
+  float:
+    argsname: [a,b,expect]
+    datas:
+      - [0.0, 0.0, 0.0]
+      - [0.1, 0.1, 0.2]
+      - [0.1, 0.2, 0.3]
+      - [100.123, 0.2, 100.323]
+      - [32.3e+18, -90., 3.23e+19]
+      - [-32.54e100, 70.2E-12, -3.254e+101]
+    ids:
+      - allzero
+      - smartfloat
+      - loopfloat
+      - bigfloat
+      - e
+      - E
+  complex:
+    argsname: [a,b,expect]
+    datas:
+      - [3.14j, 0, 3.14j]
+      - [9.322e-36j, .876j, 0.876j]
+      - [-.6545+0J, 3e+26J, -0.6545+3e+26j]
+      - [4.53e-7j, 32.3e100, 3.23e+101+4.53e-07j]
+    ids:
+      - allzero
+      - floatcomplex
+      - negativecomplex
+      - eEcomplex
+  typeerror:
+    argsname: [a,b,expect]
+    datas:
+      - ["0", 0, TypeError]
+      - [100, '200', TypeError]
+      - [(100), 100, TypeError]
+      - [[100], 100, TypeError]
+      - [{1:100}, 100, TypeError]
+      - [{100}, 100, TypeError]
+    ids:
+      - fstring
+      - dstring
+      - tuple
+      - list
+      - dict
+      - set
+div:
+  zeroerror:
+    argsname: [a,b,expect]
+    datas:
+      - [0, 0, ZeroDivisionError]
+      - [1, 0, ZeroDivisionError]
+      - [1.0, 0.0, ZeroDivisionError]
+      - [1+2j, 0.0j, ZeroDivisionError]
+    ids:
+      - allzero
+      - intzero
+      - floatzero
+      - complexzero
+  int:
+    argsname: [a,b,expect]
+    datas:
+      - [0, 1, 0]
+      - [1, 1, 1]
+      - [1, 2, 0.5]
+      - [1, 3, 0.3333333333333333]
+      - [-1, 100, -0.01]
+      - [-100, 1, -100]
+    ids:
+      - intzero
+      - equal
+      - getfloat
+      - loop
+      - negative1
+      - negative2
+  float:
+    argsname: [a,b,expect]
+    datas:
+      - [0.0, 1, 0.0]
+      - [0.1, 0.1, 1]
+      - [0.1, 3, 0.03333333333333333]
+      - [-10, 0.23, -43.47826086956522]
+      - [-10, 5, -2]
+    ids:
+      - getfloatzero
+      - getint
+      - loop1
+      - loop2
+      - negtive
+  complex:
+    argsname: [a,b,expect]
+    datas:
+      - [0j, 1+5j, 0j]
+      - [1j, 5, 0.2j]
+      - [1, 1+2j, 0.2-0.4j]
+      - [1j, 1+2j, 0.4+0.2j]
+      - [1j, 1+5j, 0.1923076923076923+0.038461538461538464j]
+      - [1j, 3j, 0.3333333333333333+0j]
+    ids:
+      - zero
+      - complex/int
+      - int/complex
+      - complex
+      - loop1
+      - loop2
+  typeerror:
+    argsname: [a,b,expect]
+    datas:
+      - ["0", 0j, TypeError]
+      - [100j, '200', TypeError]
+      - [(100j), 100j, TypeError]
+      - [[100j], 100j, TypeError]
+      - [{1j:100j}, 100j, TypeError]
+      - [{100j}, 100j, TypeError]
+    ids:
+      - fstring
+      - dstring
+      - tuple
+      - list
+      - dict
+      - set
